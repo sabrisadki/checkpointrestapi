@@ -4,16 +4,19 @@ import { useNavigate,useParams } from 'react-router';
 import '/home/sabri/Desktop/contactlistproject/frontend/src/Components/UpdateContact/UpdateContact.css'
 
 const UpdateContact = () => {
-const [name,setName]=useState('')
-const [email,setEmail]=useState('')
-const [adresse,setAdresse]=useState('')
-const [age,setAge]=useState(0)
-const navigate = useNavigate()
-const {id}=useParams()
-const handeUpdat=async(idcon,values)=>{
-await updateContact(idcon,values)
-navigate('/list')
-}
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [adresse, setAdresse] = useState('');
+  const [age, setAge] = useState(0);
+  
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+  const handleUpdate = async (id, values) => {
+    await updateContact(id, values);
+    navigate('/list');
+  }
 
 const getUniqueId=async(conatctid)=>{
 const data = await getUniqueUser(conatctid)
@@ -48,7 +51,7 @@ return (
         <input type="email" className="input" name="Email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}  />
       </label>
     <div className="submitCard">
-      <button onClick={()=>handeUpdat({name,age,adresse,email})} >Update Contact</button>
+      <button type="button" onClick={()=>handleUpdate(id,{name,age,adresse,email})} >Update Contact</button>
     </div>
   </form>
 )
