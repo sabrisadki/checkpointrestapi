@@ -15,7 +15,6 @@ const UpdateContact = () => {
 
   const handleUpdate = async (id, values) => {
     await updateContact(id, values);
-    navigate('/list');
   }
 
 const getUniqueId=async(conatctid)=>{
@@ -51,7 +50,7 @@ return (
         <input type="email" className="input" name="Email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}  />
       </label>
     <div className="submitCard">
-      <button type="button" onClick={()=>handleUpdate(id,{name,age,adresse,email})} >Update Contact</button>
+      <button onClick={()=>handleUpdate(id,{name,age,adresse,email},navigate('/list'))} >Update Contact</button>
     </div>
   </form>
 )

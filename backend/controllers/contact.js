@@ -1,6 +1,5 @@
 const ContactSchema = require('../model/contact');
 
-// Controller function for GET '/getuser'
 const getUsers = async (req, res) => {
   try {
     const contc = await ContactSchema.find();
@@ -10,7 +9,6 @@ const getUsers = async (req, res) => {
   }
 };
 
-// Controller function for POST '/adduser'
 const addUser = async (req, res) => {
   try {
     const newContact = new ContactSchema(req.body);
@@ -21,7 +19,6 @@ const addUser = async (req, res) => {
   }
 };
 
-// Controller function for PUT '/updateuser/:id'
 const updateUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -32,7 +29,6 @@ const updateUser = async (req, res) => {
   }
 };
 
-// Controller function for DELETE '/deleteuser/:id'
 const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -43,7 +39,6 @@ const deleteUser = async (req, res) => {
   }
 };
 
-// Controller function for GET '/getuser/:id'
 const getUniqueUser = async (req, res) => {
   try {
     const { id } = req.params;

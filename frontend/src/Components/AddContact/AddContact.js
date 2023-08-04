@@ -4,15 +4,18 @@ import {PostContact} from '../../api/contact'
 import { useNavigate } from 'react-router';
 
 const AddContact = () => {
-const [name,setName]=useState('')
-const [email,setEmail]=useState('')
-const [adresse,setAdresse]=useState('')
-const [age,setAge]=useState(0)
-const navigate = useNavigate()
+    const [name,setName]=useState('')
+    const [email,setEmail]=useState('')
+    const [adresse,setAdresse]=useState('')
+    const [age,setAge]=useState(0)
+    const navigate = useNavigate()
+
 const handelAdd=async(values)=>{
- await PostContact(values)
- navigate('/list')
+await PostContact(values);
+
+
 }
+
   return (
     <form className="form">
             <h1>Add contact Form</h1>
@@ -34,7 +37,7 @@ const handelAdd=async(values)=>{
               <input type="email" className="input" name="Email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}  />
             </label>
           <div className="submitCard">
-            <button onClick={()=>handelAdd({name,age,adresse,email})} >Add Contact</button>
+            <button onClick={()=>handelAdd({name,age,adresse,email},navigate('/list'))} >Add Contact</button>
           </div>
         </form>
   )

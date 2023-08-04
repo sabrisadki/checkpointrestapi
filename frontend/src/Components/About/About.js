@@ -1,9 +1,11 @@
 import React from 'react'
-import "/home/sabri/Desktop/contactlistproject/frontend/src/Components/About.css"
+import "/home/sabri/Desktop/contactlistproject/frontend/src/Components/About/About.css"
+
 const About = () => {
   return (
-    <div>
-        <div id="book">
+  <div>
+    <p></p>
+  <div id="book">
   <div id="top"></div>
   <div id="front"></div>
   <div id="right"></div>
@@ -20,7 +22,6 @@ const About = () => {
   </div>
   <div id="bookmark-shadow"></div>
 </div>
-
 <div id="flip">
   <div id="front">
     <div>
@@ -62,11 +63,8 @@ const About = () => {
     </div>
   </div>
 </div>
-
-<h4>CSS 3D Bending Effect - Page Flip</h4>
-
-    </div>
-  )
+</div>
+)
 }
 
 export default About
