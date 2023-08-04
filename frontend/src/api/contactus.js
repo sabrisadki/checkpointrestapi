@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const PostContact = async (values) => {
+export const PostMessage = async (values) => {
   try {
     const addMessage = await axios.post('http://localhost:5001/api/contactus', { ...values });
     console.log('Added message:', addMessage);

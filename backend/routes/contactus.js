@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { postMessage } = require('../controllers/message');
+const { postMessage } = require('../controllers/contactus');
 
-// Handle POST request to /api/contactus
-router.post('/', postMessage);
+router.post('/api/contactus', postMessage);
 
 module.exports = router;

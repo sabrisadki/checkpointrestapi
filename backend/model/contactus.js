@@ -6,4 +6,4 @@ const messageSchema = mongoose.Schema({
     message: String,
 });
 
-module.exports = mongoose.model('message', messageSchema);
+module.exports = mongoose.model('clientsmsgs', messageSchema);

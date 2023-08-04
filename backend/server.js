@@ -1,15 +1,20 @@
 const express = require('express')
 const connectdb  = require('./config/connectdb')
-var cors = require('cors')
+const cors = require('cors')
+require('dotenv').config()
+console.log(process.env) 
+const contactUsRoute = require('./routes/contactus');
 const userRoutes = require('./routes/user')
-const app = express()
 const contactRouter = require('./routes/contact')
-const port = 5001 
+const app = express()
+const port = process.env.PORT || 5000 
 app.use(cors())
 app.use(express.json())
-connectdb()
+app.use(contactUsRoute);
 app.use('/api/user',contactRouter)
 app.use('/auth',userRoutes)
+
+connectdb()
 app.listen(port,err=>{
-    err?console.log(err):console.log(`successfully connected to ${port}`)
+err?console.log(err):console.log(`successfully connected to ${port}`)
 })

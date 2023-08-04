@@ -19,7 +19,6 @@ await PostContact(values);
   return (
     <form className="form">
             <h1>Add contact Form</h1>
-            <header> Contact card information <span class="message">Fill the form to continue.</span></header>
               <label>
               <span>Name</span>
                 <input type="text" className="input" name="Name" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>
